@@ -1,6 +1,6 @@
 """VerificationEvent: an atomic, hashed, replayable record of a verification act.
 
-Schema: verification-event-v1 (see SPEC.md — the spec is normative, this file
+Schema: verification-event-v1 (see SPEC.md - the spec is normative, this file
 is the reference implementation).
 
 Design rules the schema enforces:
@@ -12,7 +12,7 @@ Design rules the schema enforces:
   credit) are excluded, so re-emitting the identical act dedups.
 - The verifier dict MUST carry a "version" (toolchain/model/ruleset version):
   the same check under a different toolchain is a DIFFERENT act. make()
-  raises ValueError otherwise — this is spec conformance, not pedantry.
+  raises ValueError otherwise - this is spec conformance, not pedantry.
 """
 from __future__ import annotations
 import hashlib, json, time
@@ -96,7 +96,7 @@ def make(event_kind, target_id, outcome=None, typed_failure="none",
          component_id=None) -> VerificationEvent:
     """Create a content-addressed event. See SPEC.md for field semantics.
 
-    Raises ValueError when a non-empty verifier dict lacks "version" — event
+    Raises ValueError when a non-empty verifier dict lacks "version" - event
     identity must distinguish toolchain versions (a re-check after a version
     bump is a new act, and must not dedup away).
     """
