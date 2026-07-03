@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verification-events"
+version = "0.1.0"
+description = "Schema + reference implementation for verification provenance events (verification-event-v1)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "James Kovalenko"}]
+requires-python = ">=3.9"
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[project.urls]
+Repository = "https://github.com/manifoldcontrol/verification-events"
+Specification = "https://github.com/manifoldcontrol/verification-events/blob/main/SPEC.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
